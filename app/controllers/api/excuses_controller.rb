@@ -1,4 +1,6 @@
 class Api::ExcusesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def create
     @excuse = Excuse.new(excuse_params)
     if @excuse.save
