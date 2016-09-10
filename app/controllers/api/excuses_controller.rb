@@ -1,6 +1,6 @@
 class Api::ExcusesController < ApplicationController
   def create
-    @excuse = Excuse.new(excuse_params)
+    @excuse = current_user.excuses.build(excuse_params)
     if @excuse.save
       render json: @excuse
     else

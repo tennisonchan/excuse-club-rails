@@ -1,4 +1,6 @@
 class Excuse < ApplicationRecord
+  belongs_to :user
+
   def start_time=(val)
     self.start_at = Time.zone.at(val.to_i)
   end
