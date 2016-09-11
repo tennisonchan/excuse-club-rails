@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   rolify
-  has_and_belongs_to_many :buddies, class_name: 'User', join_table: 'buddies'
+  has_and_belongs_to_many :buddies, class_name: 'User', join_table: 'buddies', association_foreign_key: 'buddy_id'
   has_many :excuses
   has_and_belongs_to_many :begs, class_name: 'Excuse', join_table: 'beggings', foreign_key: 'begging_id'
   has_many :beers, class_name: 'Excuse', foreign_key: :brother_id
