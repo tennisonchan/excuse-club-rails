@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   rolify
   has_many :excuses
+  has_many :beers, class_name: 'Excuse', foreign_key: :brother_id
 end
