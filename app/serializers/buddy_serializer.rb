@@ -1,3 +1,3 @@
 class BuddySerializer < ActiveModel::Serializer
-  attributes :id, :name, :email
+  attributes :id, :name, :phone
 end

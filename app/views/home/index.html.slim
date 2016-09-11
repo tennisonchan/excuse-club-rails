@@ -4,12 +4,12 @@ p POST /api/users.json?api_key=secret
 strong Body
 pre
   code
-    | { name: 'Hi', email: 'test@example.com' }
+    | { name: 'Hi', phone: '+13211231234' }
 
 strong Response
 pre
   code
-    | { user: { id: 123, name: 'Hi', email: 'test@example.com', token: 'jfioadspjfiaspdfjdsifp' } }
+    | { user: { id: 123, name: 'Hi', phone: '+13211231234', token: 'jfioadspjfiaspdfjdsifp' } }
 
 hr
 
@@ -19,12 +19,12 @@ p POST /api/buddies.json?api_key=secret&token=[user_token]
 strong Body
 pre
   code
-    | { buddies: [{ name: 'Hi', email: 'test@example.com' }, { name: 'Bro', email: 'test2@example.com' }] }
+    | { buddies: [{ name: 'Hi', phone: '+11231231234' }, { name: 'Bro', phone: '+11231231235' }] }
 
 strong Response
 pre
   code
-    | { buddies: [{ id: 123, name: 'Hi', email: 'test@example.com' }, { name: 'Bro', email: 'test2@example.com' }] }
+    | { buddies: [{ id: 123, name: 'Hi', phone: '+11231231234' }, { id: 321, name: 'Bro', phone: '+11231231235' }] }
 
 hr
 
@@ -34,7 +34,7 @@ p GET /api/buddies.json?api_key=secret&token=[user_token]
 strong Response
 pre
   code
-    | { buddies: [{ id: 123, name: 'Hi', email: 'test@example.com' }, { name: 'Bro', email: 'test2@example.com' }] }
+    | { buddies: [{ id: 123, name: 'Hi', phone: '+11231231234' }, { id: 321, name: 'Bro', phone: '+11231231235' }] }
 
 hr
 
