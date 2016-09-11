@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users, only: %i(create)
     resources :buddies, only: %i(create)
-    resources :excuses, only: %i(create) do
+    resources :excuses, only: %i(create)
+    resources :begs, only: %i(index show) do
       member do
         post :bro
       end

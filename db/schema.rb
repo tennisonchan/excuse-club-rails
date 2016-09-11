@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160911011401) do
+ActiveRecord::Schema.define(version: 20160911012346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beggings", force: :cascade do |t|
+    t.integer "excuse_id"
+    t.integer "begging_id"
+    t.index ["begging_id"], name: "index_beggings_on_begging_id", using: :btree
+    t.index ["excuse_id"], name: "index_beggings_on_excuse_id", using: :btree
+  end
 
   create_table "buddies", id: false, force: :cascade do |t|
     t.integer "user_id"

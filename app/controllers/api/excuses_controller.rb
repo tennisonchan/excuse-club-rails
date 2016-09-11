@@ -4,18 +4,15 @@ class Api::ExcusesController < ApplicationController
   def create
     @excuse = current_user.excuses.build(excuse_params)
     if @excuse.save
+      if params[:buddies].present?
+        params[:buddies].each do |buddy|
+          user = User.where(phone: buddy[:phone]).first_or_create!(name: buddy[:name], password: Devise.friendly_token(20))
+          @excuse.beggings << user
+        end
+      end
       render json: @excuse
     else
       render json: { error: @excuse.errors.full_messages.first }
-    end
-  end
-
-  def bro
-    if @excuse.done?
-      render status: 422, json: { error: 'Already accepted' }
-    else
-      @excuse.bro(by: current_user)
-      render json: @excuse
     end
   end
 

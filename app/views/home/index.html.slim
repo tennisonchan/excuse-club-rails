@@ -53,12 +53,32 @@ pre
 
 hr
 
-h1 Accept Excuse
-p POST /api/excuses/[excuse_id]/bro.json?api_key=secret&token=[user_token]
+h1 Get Beggings
+p POST /api/begs.json?api_key=secret&token=[user_token]
 
 strong Response
 pre
   code
-    | { id: 123, user_id: 456, start_at: '2016-09-10T23:50:39.000Z', end_at: '2016-09-10T23:50:39.000Z', brother_id: 234 }
+    | { begs: [{ id: 123, user_id: 456, start_at: '2016-09-10T23:50:39.000Z', end_at: '2016-09-10T23:50:39.000Z', brother_id: null }] }
+
+hr
+
+h1 Get Begging
+p POST /api/begs/[begging_id].json?api_key=secret&token=[user_token]
+
+strong Response
+pre
+  code
+    | { beg: { id: 123, user_id: 456, start_at: '2016-09-10T23:50:39.000Z', end_at: '2016-09-10T23:50:39.000Z', brother_id: null } }
+
+hr
+
+h1 Accept Begging
+p POST /api/begs/[begging_id]/bro.json?api_key=secret&token=[user_token]
+
+strong Response
+pre
+  code
+    | { beg: { id: 123, user_id: 456, start_at: '2016-09-10T23:50:39.000Z', end_at: '2016-09-10T23:50:39.000Z', brother_id: 234 } }
 
 hr
