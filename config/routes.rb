@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#index'
+
+  get 'demo', to: 'demo#index'
 end
