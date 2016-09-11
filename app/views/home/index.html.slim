@@ -9,7 +9,32 @@ pre
 strong Response
 pre
   code
-    | { id: 123, name: 'Hi', email: 'test@example.com', token: 'jfioadspjfiaspdfjdsifp' }
+    | { user: { id: 123, name: 'Hi', email: 'test@example.com', token: 'jfioadspjfiaspdfjdsifp' } }
+
+hr
+
+h1 Add Buddies
+p POST /api/buddies.json?api_key=secret&token=[user_token]
+
+strong Body
+pre
+  code
+    | { buddies: [{ name: 'Hi', email: 'test@example.com' }, { name: 'Bro', email: 'test2@example.com' }] }
+
+strong Response
+pre
+  code
+    | { buddies: [{ id: 123, name: 'Hi', email: 'test@example.com' }, { name: 'Bro', email: 'test2@example.com' }] }
+
+hr
+
+h1 List Buddies
+p GET /api/buddies.json?api_key=secret&token=[user_token]
+
+strong Response
+pre
+  code
+    | { buddies: [{ id: 123, name: 'Hi', email: 'test@example.com' }, { name: 'Bro', email: 'test2@example.com' }] }
 
 hr
 
@@ -24,7 +49,7 @@ pre
 strong Response
 pre
   code
-    | { id: 123, user_id: 456, start_at: '2016-09-10T23:50:39.000Z', end_at: '2016-09-10T23:50:39.000Z', brother_id: nil }
+    | { id: 123, user_id: 456, start_at: '2016-09-10T23:50:39.000Z', end_at: '2016-09-10T23:50:39.000Z', brother_id: null }
 
 hr
 
