@@ -1,0 +1,29 @@
+h1 Create Users
+p POST /api/users.json?api_key=secret
+
+strong Body
+pre
+  code
+    | { name: 'Hi', email: 'test@example.com' }
+
+strong Response
+pre
+  code
+    | { id: 123, name: 'Hi', email: 'test@example.com', token: 'jfioadspjfiaspdfjdsifp' }
+
+hr
+
+h1 Create Excuses
+p POST /api/excuses.json?api_key=secret&token=[user_token]
+
+strong Body
+pre
+  code
+    | { start_time: 1473552175, end_time: 1473552185 }
+
+strong Response
+pre
+  code
+    | { id: 123, user_id: 456, start_at: '2016-09-10T23:50:39.000Z', end_at: '2016-09-10T23:50:39.000Z' }
+
+hr
